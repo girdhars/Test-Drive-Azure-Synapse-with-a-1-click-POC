@@ -133,11 +133,10 @@
 									{
 										"source": {
 											"name": "pickup_datetime",
-											"type": "String"
+											"type": "DateTime"
 										},
 										"sink": {
-											"name": "pickup_datetime",
-											"type": "String"
+											"name": "pickup_datetime"
 										}
 									},
 									{
@@ -153,21 +152,19 @@
 									{
 										"source": {
 											"name": "fare_amount",
-											"type": "String"
+											"type": "Decimal"
 										},
 										"sink": {
-											"name": "fare_amount",
-											"type": "String"
+											"name": "fare_amount"
 										}
 									},
 									{
 										"source": {
 											"name": "surcharge",
-											"type": "String"
+											"type": "Decimal"
 										},
 										"sink": {
-											"name": "surcharge",
-											"type": "String"
+											"name": "surcharge"
 										}
 									},
 									{
@@ -203,11 +200,10 @@
 									{
 										"source": {
 											"name": "total_amount",
-											"type": "String"
+											"type": "Decimal"
 										},
 										"sink": {
-											"name": "total_amount",
-											"type": "String"
+											"name": "total_amount"
 										}
 									}
 								]
@@ -2041,6 +2037,26 @@
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 3')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT TOP (100) [medallion]\n,[hack_license]\n,[vendor_id]\n,[pickup_datetime]\n,[payment_type]\n,[fare_amount]\n,[surcharge]\n,[mta_tax]\n,[tip_amount]\n,[tolls_amount]\n,[total_amount]\n FROM [gs].[fares-data]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "abc4bpfpbsuoaucqpocws1p1",
+						"poolName": "abc4bpfpbsuoaucqpocws1p1"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
 			"dependsOn": []
 		}
 	]

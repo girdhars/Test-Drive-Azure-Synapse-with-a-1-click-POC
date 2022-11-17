@@ -93,11 +93,10 @@
 							{
 								"source": {
 									"name": "pickup_datetime",
-									"type": "String"
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "pickup_datetime",
-									"type": "String"
+									"name": "pickup_datetime"
 								}
 							},
 							{
@@ -113,21 +112,19 @@
 							{
 								"source": {
 									"name": "fare_amount",
-									"type": "String"
+									"type": "Decimal"
 								},
 								"sink": {
-									"name": "fare_amount",
-									"type": "String"
+									"name": "fare_amount"
 								}
 							},
 							{
 								"source": {
 									"name": "surcharge",
-									"type": "String"
+									"type": "Decimal"
 								},
 								"sink": {
-									"name": "surcharge",
-									"type": "String"
+									"name": "surcharge"
 								}
 							},
 							{
@@ -163,11 +160,10 @@
 							{
 								"source": {
 									"name": "total_amount",
-									"type": "String"
+									"type": "Decimal"
 								},
 								"sink": {
-									"name": "total_amount",
-									"type": "String"
+									"name": "total_amount"
 								}
 							}
 						]
